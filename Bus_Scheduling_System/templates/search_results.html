@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Search Results</title>
+</head>
+<body>
+    <h1>Bus Search Results</h1>
+
+    {% if buses %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Bus Number</th>
+                    <th>Time</th>
+                    <th>Route Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bus in buses %}
+                    <tr>
+                        <td>{{ bus.number }}</td>
+                        <td>{{ bus.time }}</td>
+                        <td>{{ bus.route_number }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No buses found for the specified criteria.</p>
+    {% endif %}
+</body>
+</html>
